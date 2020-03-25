@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model MD2._0ffline.Data.Note
+
+<div class="text-center">
+    <h1 class="display-4">Just nu pågår underhåll!</h1>
+    <img src="~/img/sodra.png" class="img-fluid" style="max-width: 90px;" />
+</div>
+<br />
+
+<p>Mobile Device portalen ligger nere pga underhåll. Vänligen använd Offline-Mobile Device under tiden som underhåll pågår.</p>
+
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <h3>Inlagringsdirektiv</h3>
+        <h4>SCMS - Mönsterås</h4>
+        <h4>SCV - Värö</h4>
+        <h4>SCM - Mörrum</h4>
+    </div>
+    <div class="col-md-6">
+        <h3>Notering</h3>
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EntryText" class="control-label"></label>
+                <textarea asp-for="EntryText" class="form-control" rows="5"></textarea>
+                <span asp-validation-for="EntryText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="User" class="control-label"></label>
+                <input asp-for="User" class="form-control" />
+                <span asp-validation-for="User" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lägg till notering" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
